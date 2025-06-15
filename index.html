@@ -1,149 +1,149 @@
+# Create a clean, ready-to-use HTML Privacy Policy page in both Arabic and English with toggle
 
+html_fixed = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy – EhabGM | Online Services</title>
+  <title>Privacy Policy | سياسة الخصوصية – EhabGM</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+      direction: ltr;
     }
     header {
-      background-color: #003366;
+      background-color: #001f3f;
       color: white;
-      padding: 20px 40px;
+      padding: 1.5rem;
       text-align: center;
     }
-    .container {
+    main {
       max-width: 960px;
       margin: auto;
-      padding: 40px 20px;
-      background-color: white;
-      box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
-      margin-top: 0;
+    .lang-toggle {
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
-    section {
-      margin-bottom: 30px;
+    .lang-toggle button {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border: none;
+      background-color: #0074D9;
+      color: white;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
     }
+    .lang-toggle button:hover {
+      background-color: #005fa3;
+    }
+    .ar { display: none; direction: rtl; text-align: right; }
+    .en { display: block; direction: ltr; text-align: left; }
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      font-size: 0.9rem;
+      padding: 1rem;
       color: #555;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header class="animate__animated animate__fadeInDown">
-    <h1>Privacy Policy – EhabGM | Online Services</h1>
+  <header>
+    <h1>Privacy Policy | سياسة الخصوصية</h1>
   </header>
-  <main class="container animate__animated animate__fadeInUp">
-    <section>
-  <h2>1. Data We Collect</h2>
-  <ul>
-    <li>Full name</li>
-    <li>Email address</li>
-    <li>Phone number</li>
-    <li>Technical data such as IP address, device type, browser</li>
-    <li>Behavioral data such as user preferences, clicks, and browsing history on the site</li>
-    <li>Payment data (if any payment features are activated in the future)</li>
-  </ul>
-</section>
+  <main class="animate__animated animate__fadeIn">
+    <div class="lang-toggle">
+      <button onclick="switchLang('en')">English</button>
+      <button onclick="switchLang('ar')">العربية</button>
+    </div>
 
-<section>
-  <h2>2. How We Collect Data</h2>
-  <ul>
-    <li>When you fill out forms on our website</li>
-    <li>When you contact us via social media or email</li>
-    <li>Through cookies and usage analytics</li>
-    <li>Via third-party services (e.g., Meta, Google, etc.)</li>
-  </ul>
-</section>
+    <div class="en lang">
+      <h2>1. Data We Collect</h2>
+      <ul>
+        <li>Full name, email, phone number</li>
+        <li>IP address, device & browser info</li>
+        <li>Browsing behavior, preferences</li>
+        <li>Payment data (if applicable)</li>
+      </ul>
 
-<section>
-  <h2>3. Why We Use Your Data</h2>
-  <ul>
-    <li>To provide and improve our digital services</li>
-    <li>To create advertising campaigns and personalize content</li>
-    <li>To respond to your inquiries and provide support</li>
-    <li>To send notifications or service-related updates</li>
-    <li>To analyze performance and enhance the user experience</li>
-  </ul>
-</section>
+      <h2>2. How We Collect It</h2>
+      <ul>
+        <li>Forms, cookies, contact, analytics</li>
+      </ul>
 
-<section>
-  <h2>4. Data Protection</h2>
-  <ul>
-    <li>We use HTTPS protocols to secure data transmission</li>
-    <li>Data is stored on secured servers</li>
-    <li>We do not share your data with third parties without your consent unless required by law</li>
-  </ul>
-</section>
+      <h2>3. Why We Use It</h2>
+      <ul>
+        <li>Service delivery, improvement, support, personalization</li>
+      </ul>
 
-<section>
-  <h2>5. Sharing Data with Government Authorities</h2>
-  <ul>
-    <li>We do not share user data with any government authority unless:</li>
-    <ul>
-      <li>There is an official court order</li>
-      <li>A documented and valid legal request is submitted</li>
-    </ul>
-    <li>All requests are subject to legal review, and we follow a data minimization policy</li>
-    <li>We maintain internal records for every data request received</li>
-  </ul>
-</section>
+      <h2>4. Protection & Sharing</h2>
+      <ul>
+        <li>Secure storage and legal compliance</li>
+        <li>Requests from authorities are reviewed and documented</li>
+      </ul>
 
-<section>
-  <h2>6. Third-Party Services</h2>
-  <p>We may use services such as:</p>
-  <ul>
-    <li>Meta APIs (Facebook, Instagram)</li>
-    <li>Google Analytics</li>
-    <li>Chat tools or CRM platforms</li>
-  </ul>
-  <p>Each third party has its own privacy policy, and we encourage users to review them.</p>
-</section>
+      <h2>5. Your Rights</h2>
+      <ul>
+        <li>Access, update, delete, restrict usage of your data</li>
+      </ul>
+    </div>
 
-<section>
-  <h2>7. User Rights</h2>
-  <ul>
-    <li>You have the right to access, update, or delete your personal data</li>
-    <li>You may request a copy of the data we store about you</li>
-    <li>You can request that your data not be used for marketing purposes</li>
-  </ul>
-</section>
+    <div class="ar lang">
+      <h2>١. البيانات التي نجمعها</h2>
+      <ul>
+        <li>الاسم الكامل، البريد الإلكتروني، رقم الهاتف</li>
+        <li>عنوان IP، بيانات الجهاز والمتصفح</li>
+        <li>سلوك وتفضيلات التصفح</li>
+        <li>بيانات الدفع (إن وُجد)</li>
+      </ul>
 
-<section>
-  <h2>8. Contact Information</h2>
-  <ul>
-    <li>Email: <a href="mailto:ehabgm.online@gmail.com">ehabgm.online@gmail.com</a></li>
-    <li>Phone: <a href="tel:+201022679250">+201022679250</a></li>
-    <li>Website: <a href="https://www.ehabgm.online">www.ehabgm.online</a></li>
-  </ul>
-</section>
+      <h2>٢. كيف نجمع البيانات</h2>
+      <ul>
+        <li>النماذج، الكوكيز، التواصل، التحليلات</li>
+      </ul>
 
-<section>
-  <h2>9. Your Consent</h2>
-  <p>By using our website or services, you consent to this Privacy Policy. We reserve the right to modify this policy at any time, and updates will be posted on this page.</p>
-</section>
+      <h2>٣. لماذا نستخدمها</h2>
+      <ul>
+        <li>تحسين الخدمات، الدعم، التخصيص، التشغيل</li>
+      </ul>
+
+      <h2>٤. الحماية والمشاركة</h2>
+      <ul>
+        <li>تخزين آمن والتزام قانوني</li>
+        <li>مراجعة وتوثيق أي طلب حكومي رسمي</li>
+      </ul>
+
+      <h2>٥. حقوقك</h2>
+      <ul>
+        <li>الوصول، التحديث، الحذف، تقييد الاستخدام</li>
+      </ul>
+    </div>
   </main>
   <footer>
-    &copy; 2025 EhabGM | Online Services. All rights reserved.
+    &copy; 2025 EhabGM | All Rights Reserved | جميع الحقوق محفوظة
   </footer>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.querySelector('.' + lang).style.display = 'block';
+      document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
 </body>
 </html>
+"""
+
+# Save the corrected and clean HTML
+fixed_path = Path("/mnt/data/index-clean.html")
+fixed_path.write_text(html_fixed, encoding="utf-8")
+
+fixed_path.name
