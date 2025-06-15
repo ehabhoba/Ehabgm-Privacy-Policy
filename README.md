@@ -20,8 +20,7 @@
 2. Go to **Settings → Pages**, and choose branch = `main`, folder = `/root`.
 3. Access your published site at:
    ```
-   https://yourusername.github.io/repository-name/
-   ```
+https://ehabhoba.github.io/Ehabgm-Privacy-Policy
 
 ## 📞 Contact
 **EhabGM | Online Services**  
